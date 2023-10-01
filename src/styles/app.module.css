@@ -1,58 +1,63 @@
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
 }
 
-body,
-html,
-#root {
-    height: 100%;
+* {
+    font-family: monospace;
 }
 
 html {
     font-size: 18px;
+
 }
 
+html,
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
 h1 {
+    border: 0;
+    margin: 0;
     padding: .77rem 0;
     background-color: #010c3f;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.88rem;
     color: #fff;
 }
 
-h1 .highlight {
+.highlight {
     color: #6c41ec;
 }
 
 h2 {
-    font-family: 'Poppins', sans-serif;
+    color: white;
     font-size: 1.55rem;
 }
 
 .App {
+    background-image: url(../imgs/background.JPG);
     height: 100%;
     padding: 0 17% 10% 17%;
-    background-image: url('./background_photo_desktop.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Work Sans', sans-serif;
     font-weight: 500;
-    color: #fff;
 }
 
-.App-playlist {
+.AppPlaylist {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 4em;
 }
 
 @media only screen and (max-width: 1020px) {
-    .App-playlist {
+    .AppPlaylist {
         align-items: center;
         flex-direction: column;
     }
@@ -66,7 +71,7 @@ h2 {
     margin-bottom: 6.33rem;
 }
 
-.SearchBar input {
+.SearchBarInput {
     width: 287px;
     padding: .88rem 0;
     border: 1px solid #fff;
@@ -75,13 +80,11 @@ h2 {
     color: #010c3f;
     text-align: center;
     font-size: 1rem;
+    border: solid 1px #000000;
 }
 
-.SearchBar input:focus {
-    outline: none;
-}
-
-.SearchBar button {
+.SearchBarButton {
+    color: white;
     cursor: pointer;
     width: 8.11rem;
     padding: .77rem 0;
@@ -90,10 +93,6 @@ h2 {
     text-align: center;
     font-size: .833rem;
     transition: background-color .25s;
-}
-
-.SearchBar a:hover {
-    background-color: rgba(108, 65, 233, .7);
 }
 
 .SearchResults {
@@ -129,18 +128,18 @@ h2 {
     box-shadow: 0 4px 2px 2px #000000;
 }
 
-.Playlist input {
+.PlaylistInput {
     width: 100%;
     border: 0;
     outline: 0;
     background: transparent;
     border-bottom: 1px solid #6f6f6f;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.55rem;
     color: #fff;
 }
 
-.Playlist-save {
+.PlaylistSave {
+    color: white;
     cursor: pointer;
     width: 10rem;
     padding: .77rem 0;
@@ -152,19 +151,13 @@ h2 {
     transition: background-color .25s;
 }
 
-.Playlist-save:hover {
-    background-color: rgba(108, 65, 233, .7);
-}
-
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
 
 @media only screen and (max-width: 1020px) {
     .Playlist {
         width: 90%;
     }
+
+
 }
 
 .TrackList {
@@ -177,7 +170,7 @@ h2 {
     border-bottom: 1px solid rgba(256, 256, 256, 0.8);
 }
 
-.Track-action {
+.TrackAction {
     cursor: pointer;
     padding: .5rem;
     font-size: 1.05rem;
@@ -188,19 +181,19 @@ h2 {
     color: rgba(265, 265, 265, .5);
 }
 
-.Track-information {
+.TrackInformation {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 72px;
 }
 
-.Track-information h3 {
+.TrackInformation_h3 {
     margin-bottom: .22rem;
+    color: white;
 }
 
-.Track-information p {
+.TrackInformation_p {
     font-size: .83rem;
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
