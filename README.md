@@ -1,10 +1,9 @@
-#About the App
+# About the App
 
 This Web App is an app that uses the Spotify API to find songs based on input and add them to a custom track. This repository only shows off the code side of the app as running the API requies a clientId.
 To create an ID, you will need to create a Spotify account and use the Spotify for Developers Dashboard, right after you create an app on the same platform. 
 
-
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
