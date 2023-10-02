@@ -6,8 +6,6 @@ import { useState, useCallback } from 'react';
 function SearchResults(props) {
 
 
-
-
     return (
         <div className={Styles.SearchResults}>
             <h2>Results</h2>

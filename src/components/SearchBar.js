@@ -25,8 +25,16 @@ function SearchBar(props) {
         e.target.style.background = '#010c3f';
     }
 
-    const search = useCallback((userInput) => {
-        Spotify.search(userInput).then(setSearchResults);
+    const search = useCallback(async (userInput) => {
+        try {
+            let newResults;
+
+            newResults = await Spotify.search(userInput);
+            setSearchResults(newResults);
+
+        } catch (error) {
+            console.error('Error during search:', error);
+        }
     }, []);
 
     const searching = useCallback((e) => {
@@ -40,16 +48,26 @@ function SearchBar(props) {
             if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
                 return;
 
+            setSearchResults((prevTracks) =>
+                prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
+
+            );
+
             setPlaylistTracks((prevTracks) => [...prevTracks, track]);
         },
         [playlistTracks]
     );
 
     const removeTrack = useCallback((track) => {
+
+
         setPlaylistTracks((prevTracks) =>
             prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
         );
-    }, []);
+        search(userInput);
+
+
+    }, [searchResults]);
     //end of adding and removing tracks
 
     const updatePlaylistName = useCallback((name) => {
